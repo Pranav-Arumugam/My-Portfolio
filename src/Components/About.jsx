@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Confetti from "react-confetti"
 import { useWindowSize } from "@react-hook/window-size"
+import SectionHeading from "./SectionHeading"
 
 const About = () => {
   const [current, setCurrent] = useState(0)
@@ -36,6 +37,7 @@ const About = () => {
 
   return (
     <section className='min-h-screen bg-gray-5 text-center px-4 py-8'>
+      <SectionHeading text={"About me"}></SectionHeading>
       <AnimatePresence className='max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6'>
         {current < questions.length ? (
           <>

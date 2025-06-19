@@ -38,3 +38,29 @@ export const questions = [
     explanation: "You're looking at the result 😉",
   },
 ]
+
+export const projects = [
+  {
+    title: "Personal Portfolio",
+    description:
+      "A responsive, dark-mode-enabled React + Tailwind portfolio to showcase my skills.",
+    image: "../public/project-image.jpg", // or import
+    tech: ["React", "Tailwind", "Framer Motion"],
+    github: "https://github.com/pranav/portfolio",
+    demo: "https://your-portfolio-url.com",
+  },
+  {
+    title: "Madura Creation – Portfolio Website",
+    description:
+      "A dynamic portfolio website designed to elevate brand identity and boost user engagement, contributing to a potential 35% increase in retention. Implemented responsive UI with performance optimization that halved load times.",
+    image: "../public/project-image.jpg", // Replace with actual image path
+    tech: ["React.js", "Tailwind CSS", "Web Design"],
+    github: "https://github.com/your-username/madura-portfolio", // Replace with real URL if available
+    demo: "https://madura-creation.com", // Replace with real live link
+    highlights: [
+      "Performance improved by 50%, reducing load times significantly",
+      "Actively collaborated with client and integrated regular feedback",
+      "Resolved frontend bottlenecks for smoother cross-device experience",
+    ],
+  },
+]
