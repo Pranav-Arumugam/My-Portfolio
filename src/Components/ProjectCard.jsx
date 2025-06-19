@@ -24,13 +24,15 @@ const ProjectCard = ({ title, description, image, tech, github, demo }) => {
         />
       </motion.div>
       <motion.div
-        className='bg-white mx-3 my-9 lg:h-full p-4 lg:p-6 rounded-xl'
+        className='bg-white mx-3 my-9 lg:h-full p-4 lg:p-6 rounded-xl dark:bg-slate-800'
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h2 className='font-bold capitalize text-2xl lg:text-4xl'>{title}</h2>
-        <p className='mt-2 text-sm lg:text-lg font-light text-gray-700  lg:mt-4'>
+        <h2 className='font-bold capitalize text-2xl lg:text-4xl dark:text-white'>
+          {title}
+        </h2>
+        <p className='mt-2 text-sm lg:text-lg font-light text-gray-700 dark:text-gray-300  lg:mt-4'>
           {description}
         </p>
         <div className='flex flex-wrap gap-2 mt-4'>
@@ -38,7 +40,7 @@ const ProjectCard = ({ title, description, image, tech, github, demo }) => {
             return (
               <span
                 key={index}
-                className='bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-xs font-medium'
+                className='bg-cyan-100 dark:bg-cyan-800 text-cyan-700 dark:text-cyan-100  px-3 py-1 rounded-full text-xs font-medium'
               >
                 {t}
               </span>

@@ -1,4 +1,19 @@
 import { nanoid } from "nanoid"
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiJavascript,
+  SiTypescript,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiFramer,
+  SiGit,
+  SiFigma,
+} from "react-icons/si"
+
+import { BiLogoVisualStudio } from "react-icons/bi"
 
 export const links = [
   { id: nanoid(), href: "#home", text: "home" },
@@ -62,5 +77,41 @@ export const projects = [
       "Actively collaborated with client and integrated regular feedback",
       "Resolved frontend bottlenecks for smoother cross-device experience",
     ],
+  },
+]
+
+export const skills = [
+  { name: "React.js", icon: SiReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "Node.js", icon: SiNodedotjs },
+  { name: "Express.js", icon: SiExpress },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "Framer Motion", icon: SiFramer },
+  { name: "Git", icon: SiGit },
+  { name: "VS Code", icon: BiLogoVisualStudio },
+  { name: "Figma", icon: SiFigma },
+]
+
+export const journey = [
+  {
+    year: "2018 – 2020",
+    title: "High School",
+    description:
+      "Completed my higher secondary education with a focus on computer science and mathematics. This is where my passion for tech truly started.",
+  },
+  {
+    year: "2020 – 2023",
+    title: "Bachelor's in Computer Applications",
+    description:
+      "Studied the fundamentals of computer science, programming, and software development. Developed several academic projects and gained real-world exposure.",
+  },
+  {
+    year: "2024 – Present",
+    title: "Master's in Advanced Computer Science",
+    description:
+      "Currently pursuing my MSc at the University of Liverpool, specialising in software engineering, web development, and machine learning.",
   },
 ]
