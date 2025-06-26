@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
+        heading: ["Montserrat", "sans-serif"],
+        body: ["Roboto", "sans-serif"],
       },
       colors: {
         brand: {

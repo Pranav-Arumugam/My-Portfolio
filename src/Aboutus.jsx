@@ -49,7 +49,7 @@ const Aboutus = () => {
           viewport={{ once: true }}
           className='hidden md:block'
         >
-          <div className='w-full h-[300px] bg-cyan-200 dark:bg-slate-700 rounded-xl shadow-lg flex items-center justify-center text-3xl font-bold text-cyan-800 dark:text-cyan-300'>
+          <div className='w-full h-[300px] bg-cyan-200 dark:bg-slate-700 rounded-xl shadow-lg flex items-center justify-center text-3xl font-bold text-cyan-800 dark:text-cyan-300 '>
             👋 Let's Build Something Cool!
           </div>
         </motion.div>

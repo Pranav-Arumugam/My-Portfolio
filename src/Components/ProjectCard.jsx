@@ -12,7 +12,7 @@ const ProjectCard = ({ title, description, image, tech, github, demo }) => {
       viewport={{ once: true }}
     >
       <motion.div
-        className='relative mx-3 h-64 lg:h-full rounded-xl overflow-hidden shadow-lg'
+        className='relative mx-3 h-64 lg:h-full rounded-xl overflow-hidden shadow-lg lg:mx-9'
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}

@@ -1,7 +1,16 @@
 @import "tailwindcss";
-
+@import "@fontsource/roboto/latin.css";
+@import "@fontsource/roboto/500.css"; /* Medium weight */
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/600.css"; /* For buttons */
+@import "@fontsource/montserrat/700.css"; /* For headings */
 @layer components {
   .align-elements {
     @apply mx-auto max-w-7xl px-8;
   }
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
 }
