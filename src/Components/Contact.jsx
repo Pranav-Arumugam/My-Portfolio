@@ -1,18 +1,25 @@
 import React, { useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa"
+import emailjs from "emailjs-com"
+import.meta.env.VITE_EMAILJS_SERVICE_ID
 
 const Contact = () => {
   const formRef = useRef(null)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    emailjs.sendForm("")
     setSubmitted(true)
     formRef.current.reset()
   }
   return (
-    <section className='bg-white dark:bg-slate-900 py-20 px-6'>
+    <section className='bg-white dark:bg-slate-900 py-20 px-6' id='contact'>
       <div className='max-w-3xl mx-auto text-center'>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -73,6 +80,7 @@ const Contact = () => {
             <FaGithub className='text-2xl hover:text-cyan-800 transition' />
           </a>
         </div>
+        <p>{serviceId}</p>
       </div>
     </section>
   )

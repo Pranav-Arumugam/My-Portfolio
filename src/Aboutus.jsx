@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import SectionHeading from "./Components/SectionHeading"
+import { values } from "./data"
 
 const Aboutus = () => {
   return (
@@ -49,9 +50,26 @@ const Aboutus = () => {
           viewport={{ once: true }}
           className='hidden md:block'
         >
-          <div className='w-full h-[300px] bg-cyan-200 dark:bg-slate-700 rounded-xl shadow-lg flex items-center justify-center text-3xl font-bold text-cyan-800 dark:text-cyan-300 '>
-            👋 Let's Build Something Cool!
-          </div>
+          {values.map((val, index) => {
+            const { icon: Icon, desc, title } = val
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className='bg-cyan-50 dark:bg-slate-800 p-6 rounded-xl shawdow hover:shadow-lg transition mt-1'
+              >
+                <div className='text-3xl text-cyan-600 dark:text-cyan-300 mb-2'>
+                  <Icon></Icon>
+                </div>
+                <h4 className='text-xl font-semibold mb-1 text-slate-800 dark:text-white'>
+                  {title}
+                </h4>
+                <p className='text-slate-600 dark:text-slate-300 text-sm'>
+                  {val.desc}
+                </p>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </div>
     </section>

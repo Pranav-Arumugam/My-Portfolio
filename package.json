@@ -18,6 +18,7 @@
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.10.13",
     "@tailwindcss/vite": "^4.1.10",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^12.18.1",
     "nanoid": "^5.1.5",
     "react": "^19.1.0",

@@ -14,6 +14,7 @@ import {
 } from "react-icons/si"
 
 import { BiLogoVisualStudio } from "react-icons/bi"
+import { FaBrain, FaDumbbell, FaRocket, FaLaptopCode } from "react-icons/fa"
 
 export const links = [
   { id: nanoid(), href: "#home", text: "home" },
@@ -59,19 +60,19 @@ export const projects = [
     title: "Personal Portfolio",
     description:
       "A responsive, dark-mode-enabled React + Tailwind portfolio to showcase my skills.",
-    image: "../public/project-image.jpg", // or import
+    image: "./project1.png", // or import
     tech: ["React", "Tailwind", "Framer Motion"],
-    github: "https://github.com/pranav/portfolio",
+    github: "https://github.com/Pranav-Arumugam/My-Portfolio.git",
     demo: "https://your-portfolio-url.com",
   },
   {
     title: "Madura Creation – Portfolio Website",
     description:
       "A dynamic portfolio website designed to elevate brand identity and boost user engagement, contributing to a potential 35% increase in retention. Implemented responsive UI with performance optimization that halved load times.",
-    image: "../public/project-image.jpg", // Replace with actual image path
+    image: "./project2.png", // Replace with actual image path
     tech: ["React.js", "Tailwind CSS", "Web Design"],
-    github: "https://github.com/your-username/madura-portfolio", // Replace with real URL if available
-    demo: "https://madura-creation.com", // Replace with real live link
+    github: "https://github.com/mukhil0212/madura-app.git", // Replace with real URL if available
+    demo: "https://madura-creation.vercel.app/", // Replace with real live link
     highlights: [
       "Performance improved by 50%, reducing load times significantly",
       "Actively collaborated with client and integrated regular feedback",
@@ -113,5 +114,27 @@ export const journey = [
     title: "Master's in Advanced Computer Science",
     description:
       "Currently pursuing my MSc at the University of Liverpool, specialising in software engineering, web development, and machine learning.",
+  },
+]
+export const values = [
+  {
+    icon: FaBrain,
+    title: "Curious Mind",
+    desc: "Always exploring new ideas and emerging technologies.",
+  },
+  {
+    icon: FaDumbbell,
+    title: "Discipline",
+    desc: "Whether it’s coding or fitness, I show up every day.",
+  },
+  {
+    icon: FaLaptopCode,
+    title: "Craftsmanship",
+    desc: "I take pride in writing clean, scalable, and thoughtful code.",
+  },
+  {
+    icon: FaRocket,
+    title: "Growth-Oriented",
+    desc: "I believe in constant learning and pushing boundaries.",
   },
 ]

@@ -32,13 +32,16 @@ const Footer = () => {
           <FaGithub className='text-2xl hover:text-cyan-800 transition' />
         </a>
       </div>
-      <p className='text-sm text-gray-300 mt-4 text-center max-w-md'>
-        Thanks for visting my website!. Feel free to reach out. I'm always open
-        to exciting opportunities and conversations.
-      </p>
-      <p className='text-xs text-gray-400 mt-2 mx-auto'>
-        &copy; {new Date().getFullYear()} Pranav Arumugam. All rights reserved.
-      </p>
+      <div className='max-w-4xl mx-auto text-center space-y-2'>
+        <p className='text-lg  mt-4 font-medium '>
+          Thanks for visting my website!. Feel free to reach out. I'm always
+          open to exciting opportunities and conversations.
+        </p>
+        <p className='text-xs text-gray-400 mt-2 mx-auto'>
+          &copy; {new Date().getFullYear()} Pranav Arumugam. All rights
+          reserved.
+        </p>
+      </div>
     </footer>
   )
 }

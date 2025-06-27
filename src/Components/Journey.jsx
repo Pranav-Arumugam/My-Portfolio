@@ -14,7 +14,7 @@ const Journey = () => {
     restDelta: 0.001,
   })
   return (
-    <section className='bg-white dark:bg-slate-900 py-20 px-6'>
+    <section className='bg-white dark:bg-slate-900 py-20 px-6' id='journey'>
       <SectionHeading text={"My Journey"}></SectionHeading>
 
       <div className='relative flex flex-col items-center'>
@@ -42,7 +42,7 @@ const Journey = () => {
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className='absolute w-4 h-4 bg-indigo-500 dark:bg-indigo-400 rounded-full left-1/2 top-4 transform -translate-x-1/2 z-10'
+                className='absolute w-4 h-4 bg-cyan-900 dark:bg-cyan-400 rounded-full left-1/2 top-4 transform -translate-x-1/2 z-10'
               ></motion.div>
               <div className='bg-gray-100 dark:bg-slate-800 p-4 rounded-lg shadow-md'>
                 <p className='text-sm text-gray-500 dark:text-gray-400'>

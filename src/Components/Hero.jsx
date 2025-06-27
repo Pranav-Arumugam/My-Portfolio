@@ -4,6 +4,7 @@ import heroimg from "../assets/pfp.jpg"
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import Spline from "@splinetool/react-spline"
+import { FaDownload } from "react-icons/fa"
 
 const Hero = () => {
   return (
@@ -64,20 +65,31 @@ const Hero = () => {
 
             <div className='flex items-center gap-x-4 mt-6'>
               <a href='#'>
-                <FaGithubSquare className='h-8 w-8 text-cyan-600 hover:text-cyan-800 transition' />
+                <FaGithubSquare className='h-8 w-8 text-gray-300 hover:text-cyan-800 transition' />
               </a>
               <a href='#'>
-                <FaLinkedinIn className='h-8 w-8 text-cyan-600 hover:text-cyan-800 transition' />
+                <FaLinkedinIn
+                  className='h-8 w-8 text-gray-300
+                 hover:text-cyan-800 transition'
+                />
               </a>
             </div>
 
             <div className='mt-6 flex flex-row z-10'>
-              <button className='bg-cyan-600 text-white px-6 py-2 rounded hover:bg-cyan-800 transition'>
+              <a
+                className='bg-cyan-600 text-white px-6 py-2 rounded hover:bg-cyan-800 transition'
+                href='#projects'
+              >
                 View Projects
-              </button>
-              <button className='border border-cyan-600 px-6 py-2 rounded hover:bg-cyan-100 dark:hover:bg-slate-800 ml-3 transition text-cyan-700 dark:text-white'>
+              </a>
+              <a
+                href='/resume.pdf'
+                download
+                className='border border-cyan-600 px-6 py-2 rounded hover:bg-cyan-100 dark:hover:bg-slate-800 ml-3 transition text-cyan-700 dark:text-white flex items-center gap-2'
+              >
+                <FaDownload />
                 Download Resume
-              </button>
+              </a>
             </div>
           </motion.article>
           <motion.article
