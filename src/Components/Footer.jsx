@@ -3,6 +3,8 @@ import { links } from "../data"
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa"
 
 const Footer = () => {
+  const gitLink = import.meta.env.VITE_EMAILJS_GIT_LINK
+  const linkedin = import.meta.env.VITE_EMAILJS_LINKEDIN_LINK
   return (
     <footer className='bg-slate-900 text-white py-8 px-6'>
       <div className='max-w-4xl mx-auto flex flex-col items-center gap-4'>
@@ -22,13 +24,13 @@ const Footer = () => {
         </div>
       </div>
       <div className='flex gap-5 text-xl mt-4 items-center justify-center'>
-        <a href='#' aria-label='Email'>
+        <a href='mailto:pranavcr28@gmail.com' aria-label='Email'>
           <FaEnvelope className='text-2xl hover:text-cyan-800 transition' />
         </a>
-        <a href='#' aria-label='LinkedIn'>
+        <a href={linkedin} aria-label='LinkedIn'>
           <FaLinkedin className='text-2xl hover:text-cyan-800 transition' />
         </a>
-        <a href='#' aria-label='GitHub'>
+        <a href={gitLink} aria-label='GitHub'>
           <FaGithub className='text-2xl hover:text-cyan-800 transition' />
         </a>
       </div>

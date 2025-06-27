@@ -7,6 +7,8 @@ import Spline from "@splinetool/react-spline"
 import { FaDownload } from "react-icons/fa"
 
 const Hero = () => {
+  const gitLink = import.meta.env.VITE_EMAILJS_GIT_LINK
+  const linkedin = import.meta.env.VITE_EMAILJS_LINKEDIN_LINK
   return (
     <div className='relative min-h-screen flex items-center justify-center bg-cyan-100 dark:bg-slate-900 py-24 '>
       <Spline
@@ -64,10 +66,10 @@ const Hero = () => {
             </div>
 
             <div className='flex items-center gap-x-4 mt-6'>
-              <a href='#'>
+              <a href={gitLink}>
                 <FaGithubSquare className='h-8 w-8 text-gray-300 hover:text-cyan-800 transition' />
               </a>
-              <a href='#'>
+              <a href={linkedin}>
                 <FaLinkedinIn
                   className='h-8 w-8 text-gray-300
                  hover:text-cyan-800 transition'

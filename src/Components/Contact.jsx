@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import { motion } from "framer-motion"
-import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa"
+import { FaEnvelope, FaLinkedin, FaGithub, FaSadCry } from "react-icons/fa"
 import emailjs from "emailjs-com"
 import.meta.env.VITE_EMAILJS_SERVICE_ID
 
@@ -11,12 +11,22 @@ const Contact = () => {
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  const gitLink = import.meta.env.VITE_EMAILJS_GIT_LINK
+  const linkedin = import.meta.env.VITE_EMAILJS_LINKEDIN_LINK
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    emailjs.sendForm("")
-    setSubmitted(true)
-    formRef.current.reset()
+    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
+      () => {
+        setSubmitted(true)
+        formRef.current.reset()
+        setError(false)
+      },
+      (err) => {
+        setError(true)
+        console.error("Emailjs Error", err)
+      }
+    )
   }
   return (
     <section className='bg-white dark:bg-slate-900 py-20 px-6' id='contact'>
@@ -40,21 +50,24 @@ const Contact = () => {
         >
           <input
             type='text'
+            name='name'
             placeholder='Your Name'
             required
-            className='w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm foucs:outline-none focus:ring-2 focus:ring-cyan-500 text-white'
+            className='w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:bg-slate-800 dark:text-white'
+          />
+          <textarea
+            name='message'
+            rows='5'
+            placeholder='Your Message'
+            required
+            className='w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:bg-slate-800 dark:text-white'
           />
           <input
             type='email'
+            name='email'
             placeholder='Your Email'
             required
-            className='w-full px-4 py-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white'
-          />
-          <textarea
-            rows='5'
-            placeholder='Your message'
-            required
-            className='w-full px-4 py-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white'
+            className='w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:bg-slate-800 dark:text-white'
           />
           <button
             type='submit'
@@ -70,17 +83,16 @@ const Contact = () => {
         )}
 
         <div className='mt-10 flex justify-center gap-6 text-cyan-600 dark:text-cyan-400'>
-          <a href='#' aria-label='Email'>
+          <a href='mailto:pranavcr28@gmail.com' aria-label='Email'>
             <FaEnvelope className='text-2xl hover:text-cyan-800 transition' />
           </a>
-          <a href='#' aria-label='LinkedIn'>
+          <a href={linkedin} aria-label='LinkedIn'>
             <FaLinkedin className='text-2xl hover:text-cyan-800 transition' />
           </a>
-          <a href='#' aria-label='GitHub'>
+          <a href={gitLink} aria-label='GitHub'>
             <FaGithub className='text-2xl hover:text-cyan-800 transition' />
           </a>
         </div>
-        <p>{serviceId}</p>
       </div>
     </section>
   )
