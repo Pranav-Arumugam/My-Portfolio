@@ -10,7 +10,10 @@ const Hero = () => {
   const gitLink = import.meta.env.VITE_EMAILJS_GIT_LINK
   const linkedin = import.meta.env.VITE_EMAILJS_LINKEDIN_LINK
   return (
-    <div className='relative min-h-screen flex items-center justify-center bg-cyan-100 dark:bg-slate-900 py-24 '>
+    <div
+      className='relative min-h-screen flex items-center justify-center bg-cyan-100 dark:bg-slate-900 py-24 '
+      id='home'
+    >
       <Spline
         scene='https://prod.spline.design/uh2upU4LEOGktO6K/scene.splinecode'
         className='absolute top-0 w-full h-full left-0'

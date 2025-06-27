@@ -4,7 +4,7 @@ import { skills } from "../data"
 import { motion } from "framer-motion"
 const Skills = () => {
   return (
-    <section className='bg-white py-16 px-6 dark:bg-slate-900'>
+    <section className='bg-white py-16 px-6 dark:bg-slate-900' id='skills'>
       <SectionHeading text={"my skills"}></SectionHeading>
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8'>
         {skills.map(({ name, icon: Icon }, index) => {
