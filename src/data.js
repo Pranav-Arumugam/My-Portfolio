@@ -63,7 +63,7 @@ export const projects = [
     image: "./project1.png", // or import
     tech: ["React", "Tailwind", "Framer Motion"],
     github: "https://github.com/Pranav-Arumugam/My-Portfolio.git",
-    demo: "https://your-portfolio-url.com",
+    demo: "https://my-portfolio-six-cyan-54.vercel.app/",
   },
   {
     title: "Madura Creation – Portfolio Website",

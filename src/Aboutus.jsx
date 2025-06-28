@@ -28,10 +28,10 @@ const Aboutus = () => {
             frameworks, software design, and user-centric development.
           </p>
           <p className='text-lg text-slate-600 dark:text-slate-300 mb-6'>
-            Outside of code, I’m always curious whether it’s exploring emerging
-            tech or pushing myself at the gym. I believe in showing up with
-            purpose, staying humble, and constantly evolving as a developer and
-            a person.
+            Outside of coding , I’m always curious , whether it’s exploring
+            emerging tech or pushing myself at the gym. I believe in showing up
+            with purpose, staying humble, and constantly evolving as a developer
+            and a person.
           </p>
           <div className='mt-6'>
             <a
