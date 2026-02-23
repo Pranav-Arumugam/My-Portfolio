@@ -57,14 +57,15 @@ const Hero = () => {
           {/* Tech tags */}
           <div className='flex flex-wrap justify-center gap-3 mb-8'>
             {[
-              "HTML",
-              "CSS",
               "JavaScript",
               "TypeScript",
               "React",
               "Next.js",
               "Node.js",
-              "Tailwind",
+              "express.js",
+              "MongoDb",
+              "Supabase",
+              "Docker",
             ].map((tech) => (
               <span
                 key={tech}

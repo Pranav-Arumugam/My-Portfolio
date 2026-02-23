@@ -16,22 +16,31 @@ const Aboutus = () => {
           {" "}
           <SectionHeading text={"About me"}></SectionHeading>
           <p className='text-lg text-slate-600 dark:text-slate-300 mb-6'>
-            I’m Pranav Arumugam, a web developer with a strong foundation in
-            building responsive, accessible, and performance-focused web
-            applications. From crafting seamless user interfaces with React and
-            Tailwind CSS to optimising interactions for real-world clients, I
-            enjoy turning ideas into elegant digital solutions.
+            I’m Pranav Arumugam, a Masters' graduate in Advanced Computer
+            Science from University of Liverpool and a full-stack developer
+            focused on building practical systems that solve real problems . i
+            care about clean architecture, scalable design, and shipping
+            products that people actually use.
           </p>
           <p className='text-lg text-slate-600 dark:text-slate-300 mb-6'>
-            Currently pursuing my Master’s in Advanced Computer Science at the
-            University of Liverpool, I’m expanding my skills across modern
-            frameworks, software design, and user-centric development.
+            My works sits at the intersection of engineering and product
+            thinking. i build <b>ApplyFlow</b>, a job tracking and interview
+            scheduling platform. and I'm developing <b>ApplyBuddy</b>, a browser
+            extension that captures job data directly from application pages and
+            syncs it to a live backend with authentication , duplicate detection
+            and offline fallbacks .What started as a personal frustration became
+            a fully integreated system handling real-world edge cases.
           </p>
           <p className='text-lg text-slate-600 dark:text-slate-300 mb-6'>
-            Outside of coding , I’m always curious , whether it’s exploring
-            emerging tech or pushing myself at the gym. I believe in showing up
-            with purpose, staying humble, and constantly evolving as a developer
-            and a person.
+            My core stack includes React , Typescript, Next.js, Node.js,
+            Express.js,MongoDB,Supabase and Docker.I foucs on API design, data
+            modeling, performance, and reliability not just getting features to
+            work, but making them resilient and maintainable.
+          </p>
+          <p className='text-lg text-slate-600 dark:text-slate-300 mb-6'>
+            Outside of coding , I value discipline and continuous improvement.
+            Whether in research , building side projects, or pushing myself
+            physically, i approach growth with consistency and focus.
           </p>
           <div className='mt-6'>
             <a
