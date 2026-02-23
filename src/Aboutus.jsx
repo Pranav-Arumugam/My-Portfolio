@@ -35,7 +35,7 @@ const Aboutus = () => {
           </p>
           <div className='mt-6'>
             <a
-              href='/public/MyResume.pdf'
+              href='/MyResume.pdf'
               className='inline-block bg-cyan-600 text-white px-6 py-2 rounded hover:bg-cyan-800 transition'
             >
               Download Resume

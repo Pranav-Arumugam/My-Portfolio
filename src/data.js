@@ -73,7 +73,7 @@ export const projects = [
     title: "Altiora – Personal Development Web App",
     description:
       "A full-stack personal development platform combining Pomodoro timer, habit tracking, workout logging, and body metrics into a unified interface — with an AI-powered suggestion engine.",
-    image: "/public/altiora.png",
+    image: "/altiora.png",
     tech: [
       "Next.js",
       "React",
@@ -111,7 +111,7 @@ export const projects = [
     title: "ApplyFlow – Job Application & Interview Manager",
     description:
       "A full-stack web application to track job applications, manage interview schedules, and evaluate skill-to-role alignment. built with Mern Stack.",
-    image: "/public/applyFlow.png",
+    image: "/applyFlow.png",
     tech: [
       "React",
       "Node.js",
@@ -152,7 +152,7 @@ export const projects = [
     currentlyBuilding: true,
     description:
       "A browser extension built with TypeScript, React, and Manifest V3 that streamlines job applications by autofilling forms across job platforms and syncing data to the ApplyFlow backend.",
-    image: "/public/applyBuddy.png",
+    image: "/applyBuddy.png",
     tech: [
       "TypeScript",
       "React",
