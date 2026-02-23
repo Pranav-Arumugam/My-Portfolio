@@ -1,80 +1,104 @@
 import React, { useEffect, useState } from "react"
-import { links } from "../data"
+import { Link, useLocation } from "react-router-dom"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import { motion, AnimatePresence } from "framer-motion"
 
+const navLinks = [
+  { id: 1, to: "/", text: "Home" },
+  { id: 2, to: "/about", text: "About" },
+  { id: 3, to: "/projects", text: "Projects" },
+  { id: 4, to: "/contact", text: "Contact" },
+]
+
 const Navbar = () => {
-  const [visible, setVisible] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+  const isHome = location.pathname === "/"
 
   useEffect(() => {
-    const toggleNavbar = () => {
-      setVisible(window.scrollY > 400)
-    }
-    window.addEventListener("scroll", toggleNavbar)
-    return () => window.removeEventListener("scroll", toggleNavbar)
-  }, [])
+    // Setting the initial scroll state when route changes
+    setScrolled(window.scrollY > 100)
+    setMenuOpen(false)
+
+    const handleScroll = () => setScrolled(window.scrollY > 100)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [location.pathname])
+
+  // making the navbar scroll only in the home page.
+  const visible = isHome ? scrolled : true
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         visible
-          ? " bg-white text-black dark:bg-slate-900 dark:text-white transition-colors duration-300 "
+          ? "bg-white dark:bg-slate-900 shadow-md opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className='mx-auto max-w-7xl px-8 py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 '>
-        <h2 className='text-3xl font-bold text-white'>
-          Pranav <span className='text-cyan-400'>Arumugam</span>
-        </h2>
-        <div className='hidden  md:flex gap-8 items-center text-slate-800 dark:text-white'>
-          {links.map((link) => {
-            const { id, href, text } = link
-            return (
-              <a
-                key={id}
-                href={href}
-                className='capitalize text-lg tracking-wide hover:text-cyan-600 duration-300'
-              >
-                {text}
-              </a>
-            )
-          })}
+      <div className='mx-auto max-w-7xl px-8 py-4 flex flex-row items-center justify-between'>
+        <Link to='/'>
+          <h2 className='text-2xl font-bold text-slate-900 dark:text-white'>
+            Pranav <span className='text-cyan-500'>Arumugam</span>
+          </h2>
+        </Link>
+
+        {/* Desktop links */}
+        <div className='hidden md:flex gap-8 items-center'>
+          {navLinks.map((link) => (
+            <Link
+              key={link.id}
+              to={link.to}
+              className={`capitalize text-lg tracking-wide transition duration-300 ${
+                location.pathname === link.to
+                  ? "text-cyan-500 font-semibold"
+                  : "text-slate-700 dark:text-white hover:text-cyan-500"
+              }`}
+            >
+              {link.text}
+            </Link>
+          ))}
         </div>
-        <div className='md:hidden flex items-center mt-2'>
+
+        {/* Mobile toggle */}
+        <div className='md:hidden'>
           <button
-            onClick={() => {
-              setMenuOpen(!menuOpen)
-            }}
+            onClick={() => setMenuOpen(!menuOpen)}
             className='text-2xl text-slate-800 dark:text-white'
           >
             {menuOpen ? <FaChevronUp /> : <FaChevronDown />}
           </button>
         </div>
+      </div>
+
+      {/* Mobile links */}
+      <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className='md:hidden px-6 pb-4 flex flex-col gap-4 text-slate-800 dark:text-white'
+            className='md:hidden px-8 pb-4 flex flex-col gap-4 bg-white dark:bg-slate-900'
           >
-            {links.map((link) => {
-              const { id, href, text } = link
-              return (
-                <a
-                  key={id}
-                  href={href}
-                  onClick={() => setMenuOpen(false)}
-                  className='capitalize text-lg hover:text-cyan-600 transition'
-                >
-                  {text}
-                </a>
-              )
-            })}
+            {navLinks.map((link) => (
+              <Link
+                key={link.id}
+                to={link.to}
+                onClick={() => setMenuOpen(false)}
+                className={`capitalize text-lg transition ${
+                  location.pathname === link.to
+                    ? "text-cyan-500 font-semibold"
+                    : "text-slate-800 dark:text-white hover:text-cyan-500"
+                }`}
+              >
+                {link.text}
+              </Link>
+            ))}
           </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </nav>
   )
 }

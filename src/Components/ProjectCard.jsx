@@ -1,71 +1,106 @@
 import React from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
-const ProjectCard = ({ title, description, image, tech, github, demo }) => {
+const ProjectCard = ({
+  id,
+  title,
+  description,
+  image,
+  tech,
+  github,
+  demo,
+  currentlyBuilding,
+}) => {
   return (
     <motion.div
-      // className='lg:grid grid-cols-2'
-      className='lg:grid grid-cols-2 gap-6 mb-16 items-center'
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      className='relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-cyan-500/20 hover:shadow-xl transition-all duration-300 group'
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <motion.div
-        className='relative mx-3 h-64 lg:h-full rounded-xl overflow-hidden shadow-lg lg:mx-9'
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
+      {/* Currently Building Badge */}
+      {currentlyBuilding && (
+        <div className='absolute top-3 left-3 z-20 flex items-center gap-2 bg-slate-900/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-cyan-500/40 shadow-lg'>
+          {/* Pulsing dot */}
+          <span className='relative flex h-2 w-2'>
+            <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75'></span>
+            <span className='relative inline-flex rounded-full h-2 w-2 bg-cyan-500'></span>
+          </span>
+          Currently Building
+        </div>
+      )}
+
+      {/* Glowing border effect for active project */}
+      {currentlyBuilding && (
+        <div className='absolute inset-0 rounded-2xl ring-2 ring-cyan-500/50 pointer-events-none z-10'></div>
+      )}
+
+      {/* Project image */}
+      <div className='h-48 overflow-hidden'>
         <img
           src={image}
-          alt=''
-          className='w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-xl'
+          alt={title}
+          className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
         />
-      </motion.div>
-      <motion.div
-        className='bg-white mx-3 my-9 lg:h-full p-4 lg:p-6 rounded-xl dark:bg-slate-800'
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <h2 className='font-bold capitalize text-2xl lg:text-4xl dark:text-white'>
+      </div>
+
+      {/* Card content */}
+      <div className='p-6'>
+        <h3 className='text-xl font-bold text-slate-800 dark:text-white mb-2'>
           {title}
-        </h2>
-        <p className='mt-2 text-sm lg:text-lg font-light text-gray-700 dark:text-gray-300  lg:mt-4'>
+        </h3>
+        <p className='text-sm text-slate-600 dark:text-slate-300 line-clamp-2 mb-4'>
           {description}
         </p>
-        <div className='flex flex-wrap gap-2 mt-4'>
-          {tech.map((t, index) => {
-            return (
-              <span
-                key={index}
-                className='bg-cyan-100 dark:bg-cyan-800 text-cyan-700 dark:text-cyan-100  px-3 py-1 rounded-full text-xs font-medium'
+
+        {/* Tech tags */}
+        <div className='flex flex-wrap gap-2 mb-5'>
+          {tech.map((t, i) => (
+            <span
+              key={i}
+              className='bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 px-2 py-1 rounded-full text-xs font-medium'
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className='flex items-center justify-between'>
+          <div className='flex gap-4'>
+            {github && (
+              <a
+                href={github}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-sm text-indigo-500 hover:text-indigo-700 underline font-medium'
               >
-                {t}
-              </span>
-            )
-          })}
+                GitHub
+              </a>
+            )}
+            {demo && (
+              <a
+                href={demo}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-sm text-teal-500 hover:text-teal-700 underline font-medium'
+              >
+                Live Demo
+              </a>
+            )}
+          </div>
+          {id && (
+            <Link
+              to={`/projects/${id}`}
+              className='text-xs bg-cyan-600 text-white px-3 py-1.5 rounded-lg hover:bg-cyan-700 transition font-medium'
+            >
+              Case Study →
+            </Link>
+          )}
         </div>
-        <div className='flex gap-4 mt-6'>
-          <a
-            href={github}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='text-sm text-indigo-600 hover:text-indigo-800 underline font-medium'
-          >
-            GitHub
-          </a>
-          <a
-            href={demo}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='text-sm text-teal-600 hover:text-teal-800 underline font-medium'
-          >
-            Live Demo
-          </a>
-        </div>
-      </motion.div>
+      </div>
     </motion.div>
   )
 }
