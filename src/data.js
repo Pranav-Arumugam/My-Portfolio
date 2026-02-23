@@ -217,6 +217,9 @@ export const skillCategories = [
       { name: "Express.js", icon: SiExpress },
       { name: "REST APIs", icon: FaServer },
       { name: "JWT Auth", icon: FaCode },
+      { name: "CORS", icon: FaServer },
+      { name: "Express Validator", icon: FaCode },
+      { name: "Zod", icon: FaCode },
     ],
   },
   {
