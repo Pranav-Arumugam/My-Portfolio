@@ -1,24 +1,27 @@
 import React from "react"
 import Navbar from "./Components/Navbar"
-import Hero from "./Components/Hero"
-import Projects from "./Components/Projects"
-import Skills from "./Components/Skills"
-import Journey from "./Components/Journey"
-import Aboutus from "./Aboutus"
-import Contact from "./Components/Contact"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./Components/Home"
+import ProjectsPage from "./Components/ProjectsPage"
+import ProjectDetail from "./Components/ProjectDetail"
+import AboutPage from "./Components/AboutPage"
+import ContactPage from "./Components/ContactPage"
 import Footer from "./Components/Footer"
 const App = () => {
   return (
-    <div className='font-poppins overflow-x-hidden'>
-      <Navbar></Navbar>
-      <Hero></Hero>
-      <Aboutus></Aboutus>
-      <Projects></Projects>
-      <Skills></Skills>
-      <Journey></Journey>
-      <Contact></Contact>
-      <Footer></Footer>
-    </div>
+    <BrowserRouter>
+      <div className='font-poppins overflow-x-hidden'>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/projects' element={<ProjectsPage />} />
+          <Route path='/projects/:id' element={<ProjectDetail />} />
+          <Route path='/contact' element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 
