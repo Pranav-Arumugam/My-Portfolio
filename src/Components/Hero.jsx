@@ -1,6 +1,7 @@
 import React from "react"
 import { FaGithubSquare, FaLinkedinIn } from "react-icons/fa"
 import { motion } from "framer-motion"
+import { Link } from "react-router"
 import { TypeAnimation } from "react-type-animation"
 import Spline from "@splinetool/react-spline"
 import { FaDownload } from "react-icons/fa"
@@ -88,12 +89,12 @@ const Hero = () => {
 
           {/* CTA buttons */}
           <div className='flex flex-wrap justify-center gap-4'>
-            <a
-              href='/projects'
+            <Link
+              to='/projects'
               className='bg-cyan-600 text-white px-8 py-3 rounded-lg hover:bg-cyan-700 transition font-medium'
             >
               View Projects
-            </a>
+            </Link>
             <a
               href='/MyResume.pdf'
               download
